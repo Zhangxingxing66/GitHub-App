@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">GitHub 浏览器</string>
+    <string name="repo_list_title">开源仓库</string>
+    <string name="repo_empty_state">暂无仓库</string>
+    <string name="repo_no_description">暂无描述</string>
+    <string name="retry">重试</string>
+    <string name="load_error_hint">加载失败，下拉刷新或点击重试。</string>
+    <string name="repo_detail_title">仓库详情</string>
+    <string name="repo_readme_title">README</string>
+    <string name="repo_owner_value">作者：%1$s</string>
+    <string name="repo_language_value">语言：%1$s</string>
+    <string name="repo_stars_value">星标：%1$d</string>
+    <string name="repo_forks_value">派生：%1$d</string>
+    <string name="repo_meta_value">%1$s  · 星标 %2$d  · 派生 %3$d</string>
+    <string name="repo_detail_error">当前展示的是降级数据（%1$s）</string>
+    <string name="unknown_language">未知</string>
+    <string name="search">搜索</string>
+    <string name="search_hint">搜索仓库（例如 okhttp）</string>
+    <string name="favorites">收藏</string>
+    <string name="favorite_title">收藏仓库</string>
+    <string name="favorite_empty">还没有收藏，可在详情页添加。</string>
+    <string name="add_favorite">添加收藏</string>
+    <string name="remove_favorite">取消收藏</string>
+</resources>

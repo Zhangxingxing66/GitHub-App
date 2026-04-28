@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 详情页标题栏，RepoDetailActivity 会启用返回按钮并设置标题。 -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/detailToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        android:titleTextColor="@android:color/white" />
+
+    <!-- 详情接口加载中显示，fallback 内容仍然可以先展示在下面。 -->
+    <ProgressBar
+        android:id="@+id/detailProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:visibility="gone" />
+
+    <!-- 仓库完整名称，例如 square/retrofit。 -->
+    <TextView
+        android:id="@+id/tvDetailFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textStyle="bold" />
+
+    <!-- 仓库描述，接口为空时 Activity 会填充默认文案。 -->
+    <TextView
+        android:id="@+id/tvDetailDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+    <!-- 仓库 owner 信息。 -->
+    <TextView
+        android:id="@+id/tvDetailOwner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+    <!-- 主要编程语言。 -->
+    <TextView
+        android:id="@+id/tvDetailLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+    <!-- stars/forks 两个核心指标横向排列。 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvDetailStars"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2" />
+
+        <TextView
+            android:id="@+id/tvDetailForks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2" />
+    </LinearLayout>
+
+    <!-- 收藏按钮，点击后由 ViewModel 执行收藏/取消收藏。 -->
+    <Button
+        android:id="@+id/btnFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/add_favorite" />
+
+    <!-- 详情请求失败时展示错误提示，但不清空已有 fallback 内容。 -->
+    <TextView
+        android:id="@+id/tvDetailError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+        android:textColor="#B3261E"
+        android:visibility="gone" />
+
+    <!-- README 区域标题。 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/repo_readme_title"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textStyle="bold" />
+
+    <!-- WebView 加载 GitHub 仓库页面的 #readme 位置。 -->
+    <WebView
+        android:id="@+id/webReadme"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

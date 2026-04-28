@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paging 列表底部的加载状态行，用于展示加载更多中的进度或失败重试。 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- 加载下一页时显示。 -->
+    <ProgressBar
+        android:id="@+id/loadStateProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- 加载下一页失败时显示友好错误文案。 -->
+    <TextView
+        android:id="@+id/loadStateErrorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/load_error_hint"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:visibility="gone" />
+
+    <!-- 加载下一页失败时显示，点击后调用 PagingDataAdapter.retry。 -->
+    <Button
+        android:id="@+id/loadStateRetryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/retry"
+        android:visibility="gone" />
+
+</LinearLayout>

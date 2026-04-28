@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 收藏页标题栏，FavoriteActivity 会启用返回按钮并设置标题。 -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/favoriteToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
+        android:titleTextColor="@android:color/white" />
+
+    <!-- FrameLayout 让收藏列表和空状态可以叠放在同一个区域。 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 收藏仓库列表，复用 item_repo.xml 的展示样式。 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
+
+        <!-- 没有收藏数据时显示的空状态。 -->
+        <TextView
+            android:id="@+id/tvFavoriteEmpty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/favorite_empty"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>
