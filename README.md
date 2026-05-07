@@ -117,14 +117,3 @@ app/src/test
 app/src/androidTest
 ```
 
-## 面试介绍示例
-
-这是一个 GitHub 仓库搜索 App。我主要使用 Java 原生 Android 开发，整体采用 MVVM 架构。列表部分使用 `Paging 3 + Room + RemoteMediator` 实现网络分页和本地缓存，UI 只从 Room 读取数据，网络请求成功后再驱动本地数据刷新。项目还实现了搜索历史、仓库收藏和详情页降级展示，弱网或详情接口失败时仍能展示基础信息，整体更接近真实 App 的数据流和用户体验。
-
-## 后续可优化方向
-
-- 引入 Hilt 做依赖注入，减少手动创建 Repository 和数据库实例。
-- 使用 Kotlin、Coroutine、Flow 重构异步和状态流。
-- 支持不同搜索词分别缓存，给 `repos` 和 `remote_keys` 增加 `query` 维度。
-- 增加更完整的数据库 Migration，替代 `fallbackToDestructiveMigration`。
-- 优化 WebView README 展示，或使用 GitHub Markdown API 自定义渲染。
